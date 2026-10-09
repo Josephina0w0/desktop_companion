@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show Swift version
+        run: swift --version
+      - name: Build Universal 2 package
+        run: ./build_app.sh
+      - name: Verify app and zip
+        run: |
+          scripts/verify_universal_app.sh "dist/角色效率岛.app"
+          scripts/verify_universal_app.sh "dist/角色效率岛.zip"

@@ -1,0 +1,46 @@
+{
+  "character_name": "你的角色名",
+  "app_name": "你的角色名效率岛",
+  "menu_bar_short_name": "角色简称",
+  "copy": {
+    "working_title": "你的角色名工作中",
+    "working_detail": "继续推进当前任务。",
+    "break_title": "休息倒计时",
+    "break_detail": "先休息一下，稍后再继续。",
+    "idle_title": "你的角色名待命中",
+    "idle_detail": "暂时没有新任务，等待下一步。",
+    "alert_title": "你的角色名提醒",
+    "alert_detail": "提醒时间到了。",
+    "ai_title": "AI 任务完成",
+    "ai_detail": "结果已完成，请检查后再继续。",
+    "water_title": "喝水时间",
+    "water_detail": "喝口水，调整一下状态。"
+  },
+  "reminders": [
+    {"id": "water", "title": "喝水", "schedule": "每 2 小时", "enabled": true},
+    {"id": "move", "title": "起身活动", "schedule": "每 1 小时", "enabled": true},
+    {"id": "noon", "title": "午间提醒", "schedule": "11:00", "enabled": true},
+    {"id": "offwork", "title": "下班", "schedule": "16:30", "enabled": true}
+  ],
+  "images": {
+    "working": "working.png",
+    "break": "break.png",
+    "idle": "idle.png",
+    "alert": "alert.png",
+    "ai": "ai.png",
+    "water": "water.png",
+    "reminder_first": "reminder-first.png",
+    "reminder_second": "reminder-second.png",
+    "reminder_third": "reminder-third.png",
+    "reminder_fourth": "reminder-fourth.png",
+    "panel_working": "panel-working.png",
+    "panel_break": "panel-break.png",
+    "panel_idle": "panel-idle.png",
+    "panel_water": "panel-water.png",
+    "panel_ai": "panel-ai.png",
+    "panel_reminder_second": "panel-reminder-second.png",
+    "panel_reminder_third": "panel-reminder-third.png",
+    "panel_reminder_fourth": "panel-reminder-fourth.png",
+    "status_icon": "statusIcon.png"
+  }
+}

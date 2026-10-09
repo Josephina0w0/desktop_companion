@@ -1,0 +1,44 @@
+{
+  "appName": "角色效率岛",
+  "characterName": "角色",
+  "storageId": "CharacterEfficiencyIsland",
+  "mutexId": "com.example.character-efficiency-island.windows",
+  "titles": {
+    "working": "角色工作中",
+    "breakTime": "休息倒计时",
+    "idle": "角色待命中",
+    "alert": "角色提醒",
+    "ai": "Codex 任务完成",
+    "water": "喝水时间",
+    "reminderFirst": "喝水时间",
+    "reminderSecond": "角色提醒",
+    "reminderThird": "角色提醒",
+    "reminderFourth": "角色提醒"
+  },
+  "details": {
+    "working": "按当前节奏继续。",
+    "breakTime": "先放松一下，准备好再继续。",
+    "idle": "暂时没有新任务，等下一步。",
+    "alert": "提醒时间到了。",
+    "ai": "结果已经准备好，请先验收。",
+    "water": "喝口水，调整一下状态。"
+  },
+  "reminders": [
+    { "id": "water", "title": "喝水", "schedule": "每 2 小时", "enabled": true },
+    { "id": "move", "title": "起身活动", "schedule": "每 1 小时", "enabled": true },
+    { "id": "noon", "title": "午间校准", "schedule": "12:00", "enabled": true },
+    { "id": "offwork", "title": "准备下班", "schedule": "19:00", "enabled": true }
+  ],
+  "panelPlacements": {
+    "working": { "height": 330, "bottom": 22, "right": 18 },
+    "breakTime": { "height": 310, "bottom": 20, "right": 12 },
+    "idle": { "height": 330, "bottom": 18, "right": 14 },
+    "alert": { "height": 265, "bottom": 36, "right": 10 },
+    "ai": { "height": 265, "bottom": 36, "right": 10 },
+    "water": { "height": 270, "bottom": 34, "right": 4 },
+    "reminderFirst": { "height": 270, "bottom": 34, "right": 4 },
+    "reminderSecond": { "height": 310, "bottom": 20, "right": 12 },
+    "reminderThird": { "height": 285, "bottom": 32, "right": 12 },
+    "reminderFourth": { "height": 310, "bottom": 20, "right": 12 }
+  }
+}

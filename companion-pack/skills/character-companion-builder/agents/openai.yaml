@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Companion Builder"
+  short_description: "Build and package native macOS character Companion apps"
+  default_prompt: "Use $character-companion-builder to create or extend a native macOS character Companion app."

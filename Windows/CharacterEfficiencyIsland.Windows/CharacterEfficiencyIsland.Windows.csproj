@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CharacterEfficiencyIsland.Windows</RootNamespace>
+    <AssemblyName>CharacterEfficiencyIsland</AssemblyName>
+    <Version>0.1.4</Version>
+    <FileVersion>0.1.4.1</FileVersion>
+    <AssemblyVersion>0.1.4.0</AssemblyVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <CharacterPack Condition="'$(CharacterPack)' == ''">generic</CharacterPack>
+    <CharacterAssetRoot Condition="'$(CharacterPack)' == 'generic'">../../Sources/CharacterEfficiencyIsland/Assets</CharacterAssetRoot>
+    <CharacterAssetRoot Condition="'$(CharacterPack)' != 'generic'">../CharacterPacks/$(CharacterPack)/Assets</CharacterAssetRoot>
+    <CharacterProfileFile Condition="'$(CharacterPack)' == 'generic'">profile.json</CharacterProfileFile>
+    <CharacterProfileFile Condition="'$(CharacterPack)' != 'generic'">../CharacterPacks/$(CharacterPack)/profile.json</CharacterProfileFile>
+    <DefineConstants Condition="'$(Flavor)' == 'companion'">$(DefineConstants);COMPANION_FLAVOR</DefineConstants>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="$(CharacterAssetRoot)/*.png">
+      <Link>Assets/%(Filename)%(Extension)</Link>
+    </Resource>
+    <EmbeddedResource Include="$(CharacterProfileFile)" LogicalName="CharacterEfficiencyIsland.Windows.profile.json" />
+  </ItemGroup>
+</Project>

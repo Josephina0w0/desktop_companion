@@ -1,0 +1,53 @@
+name: Windows packages
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Windows/**"
+      - "Sources/CharacterEfficiencyIsland/Assets/**"
+      - ".github/workflows/windows-build.yml"
+  pull_request:
+    paths:
+      - "Windows/**"
+      - "Sources/CharacterEfficiencyIsland/Assets/**"
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows-x64:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        character:
+          - generic
+        flavor:
+          - dynamic-island
+          - companion
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Build self-contained EXE and ZIP
+        shell: pwsh
+        run: ./Windows/build_windows.ps1 -Flavor "${{ matrix.flavor }}" -CharacterPack "${{ matrix.character }}" -Runtime win-x64
+
+      - name: Verify package
+        shell: pwsh
+        run: ./Windows/verify_windows_package.ps1 -Flavor "${{ matrix.flavor }}" -CharacterPack "${{ matrix.character }}" -Runtime win-x64
+
+      - name: Upload Windows packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: CharacterEfficiencyIsland-${{ matrix.flavor }}-generic-win-x64
+          path: |
+            dist/windows/*.exe
+            dist/windows/*.zip
+          if-no-files-found: error

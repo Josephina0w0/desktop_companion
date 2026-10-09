@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1400" viewBox="0 0 900 1400">
+  <rect width="900" height="1400" fill="none"/>
+  <circle cx="450" cy="330" r="220" fill="#EAF4FF" stroke="#3887E8" stroke-width="24" stroke-dasharray="38 22"/>
+  <path d="M155 1280c26-390 132-680 295-680s269 290 295 680" fill="#D7E9FF" stroke="#3887E8" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="370" cy="316" r="22" fill="#3887E8"/>
+  <circle cx="530" cy="316" r="22" fill="#3887E8"/>
+  <path d="M360 420c54 48 126 48 180 0" fill="none" stroke="#3887E8" stroke-width="20" stroke-linecap="round"/>
+  <rect x="220" y="1050" width="460" height="96" rx="48" fill="#FFFFFF" stroke="#3887E8" stroke-width="12"/>
+  <text x="450" y="1113" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="44" font-weight="700" fill="#2469BD">REPLACE PANEL ART</text>
+</svg>

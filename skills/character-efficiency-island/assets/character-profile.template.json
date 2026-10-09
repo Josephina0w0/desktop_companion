@@ -1,0 +1,91 @@
+{
+  "character_name": "",
+  "app_name": "",
+  "status_bar_icon": "",
+  "images": {
+    "working": "",
+    "break": "",
+    "alert": "",
+    "idle": "",
+    "water": "",
+    "ai": "",
+    "reminder_first": "",
+    "reminder_second": "",
+    "reminder_third": "",
+    "reminder_fourth": "",
+    "panel_working": "",
+    "panel_break": "",
+    "panel_idle": "",
+    "panel_water": "",
+    "panel_ai": "",
+    "panel_reminder_second": "",
+    "panel_reminder_third": "",
+    "panel_reminder_fourth": "",
+    "status_bar_icon": ""
+  },
+  "copy": {
+    "working_title": "",
+    "break_title": "",
+    "idle_title": "",
+    "alert_title": "",
+    "ai_title": "",
+    "water_title": "",
+    "working_detail": "",
+    "break_detail": "",
+    "idle_detail": "",
+    "alert_detail": "",
+    "ai_detail": "",
+    "water_detail": ""
+  },
+  "reminders": [
+    {
+      "id": "water",
+      "title": "喝水",
+      "schedule": "每 2 小时",
+      "enabled": true,
+      "locked_title": true
+    },
+    {
+      "id": "move",
+      "title": "起身活动",
+      "schedule": "每 1 小时",
+      "enabled": true,
+      "locked_title": false
+    },
+    {
+      "id": "noon",
+      "title": "午间校准",
+      "schedule": "11:00",
+      "enabled": true,
+      "locked_title": false
+    },
+    {
+      "id": "offwork",
+      "title": "下班",
+      "schedule": "16:30",
+      "enabled": true,
+      "locked_title": false
+    }
+  ],
+  "panel_character_placements": {
+    "working": { "height": 310, "bottom": 72, "trailing": 42 },
+    "break": { "height": 282, "bottom": 104, "trailing": 12 },
+    "water": { "height": 238, "bottom": 128, "trailing": -32 },
+    "reminder_first": { "height": 238, "bottom": 128, "trailing": -32 },
+    "idle": { "height": 330, "bottom": 52, "trailing": 42 },
+    "reminder_second": { "height": 310, "bottom": 72, "trailing": 42 },
+    "reminder_third": { "height": 232, "bottom": 150, "trailing": 42 },
+    "reminder_fourth": { "height": 310, "bottom": 64, "trailing": 42 },
+    "alert": { "height": 230, "bottom": 150, "trailing": 42 },
+    "ai": { "height": 230, "bottom": 150, "trailing": 42 }
+  },
+  "features": {
+    "keep": [],
+    "remove": [],
+    "add": []
+  },
+  "sharing": {
+    "target": "personal_zip",
+    "notes": ""
+  }
+}

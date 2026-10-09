@@ -1,0 +1,74 @@
+product:
+  slug: example-companion
+  display_name: Example Companion
+  executable_name: ExampleCompanion
+  bundle_identifier: local.example.character-companion
+  version: 1.0.0
+  build: 1
+  data_root: ExampleCompanion
+
+baseline:
+  source: assets/companion-starter
+  target: variants/example-companion
+  preserve_source: true
+
+character:
+  name: Example Character
+  layout_baseline: generic-companion
+  default_position: bottom-right
+  default_visible_scale: 1.0
+  metrics_pill:
+    text_template: "稳步推进 {work_time} · EPM {epm}"
+    fixed_size: true
+    background_changes_with_appearance: false
+    dark_mode_text: black
+    light_mode_text: white
+  states:
+    working: working.png
+    break: break.png
+    idle: idle.png
+    water: water.png
+    alert: alert.png
+    ai: ai.png
+    reminder_first: reminder-first.png
+    reminder_second: reminder-second.png
+    reminder_third: reminder-third.png
+    reminder_fourth: reminder-fourth.png
+  panel_states:
+    working: panel-working.png
+    break: panel-break.png
+    idle: panel-idle.png
+    water: panel-water.png
+    alert: panel-ai.png
+    ai: panel-ai.png
+    reminder_first: panel-water.png
+    reminder_second: panel-reminder-second.png
+    reminder_third: panel-reminder-third.png
+    reminder_fourth: panel-reminder-fourth.png
+  desktop_pet_layout:
+    image_scaling: proportional-fit
+    image_alignment: bottom
+    visible_gap_to_metrics_pill_points: [0, 6]
+  panel_placements: {}
+
+tracker:
+  mode: general
+  fields: [priority, title, status, deadline, next_action, notes]
+  stages: [planned, active, waiting, complete]
+  seed_policy: neutral
+  calendar_access: read-only
+
+storage:
+  efficiency_settings: EfficiencyIsland/settings.json
+  daily_records: EfficiencyIsland/daily-records.json
+  tracker_state: Tracker/tracker-state.json
+
+migration:
+  enabled: false
+  copy_only_when_destination_absent: true
+  sources: []
+
+distribution:
+  audience: local
+  signing: ad-hoc
+  architectures: [arm64, x86_64]
