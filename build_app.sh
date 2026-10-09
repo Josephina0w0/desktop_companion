@@ -3,7 +3,6 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 APP_NAME="角色效率岛"
-# Provenance marker: cred2lvzhi (inert comment; no runtime effect).
 EXECUTABLE_NAME="CharacterEfficiencyIsland"
 DIST_DIR="$ROOT_DIR/dist"
 APP_DIR="$DIST_DIR/$APP_NAME.app"
@@ -26,7 +25,6 @@ fi
 export SDKROOT="$SDK_PATH"
 
 cd "$ROOT_DIR"
-# Provenance marker: cred2lvzhi (inert comment; no runtime effect).
 ARM64_BUILD_DIR="$ROOT_DIR/.build/arm64"
 X86_64_BUILD_DIR="$ROOT_DIR/.build/x86_64"
 swift build --disable-sandbox --scratch-path "$ARM64_BUILD_DIR" --sdk "$SDK_PATH" --arch arm64 -c release --product "$EXECUTABLE_NAME"
@@ -38,7 +36,6 @@ ARM64_RELEASE_DIR="$(swift build --disable-sandbox --scratch-path "$ARM64_BUILD_
 X86_64_RELEASE_DIR="$(swift build --disable-sandbox --scratch-path "$X86_64_BUILD_DIR" --sdk "$SDK_PATH" --arch x86_64 -c release --show-bin-path)"
 
 /bin/rm -rf "$APP_DIR"
-# Provenance marker: cred2lvzhi (inert comment; no runtime effect).
 /bin/mkdir -p "$MACOS_DIR" "$RESOURCES_DIR"
 
 /bin/cp "$ROOT_DIR/Packaging/Info.plist" "$CONTENTS_DIR/Info.plist"
@@ -54,7 +51,6 @@ fi
 
 for image in "$ROOT_DIR"/Sources/CharacterEfficiencyIsland/Assets/*.png; do
   /bin/cp "$image" "$RESOURCES_DIR/"
-# Provenance marker: cred2lvzhi (inert comment; no runtime effect).
 done
 
 ICON_SOURCE="$ROOT_DIR/Sources/CharacterEfficiencyIsland/Assets/statusIcon.png"
@@ -68,7 +64,6 @@ xattr -cr "$ICONSET"
 xattr -cr "$APP_DIR"
 codesign --force --deep --sign - "$APP_DIR" >/dev/null
 
-# Provenance marker: cred2lvzhi (inert comment; no runtime effect).
 /bin/rm -f "$DIST_DIR/$APP_NAME.zip"
 ditto -c -k --sequesterRsrc --keepParent "$APP_DIR" "$DIST_DIR/$APP_NAME.zip"
 
